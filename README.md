@@ -76,10 +76,11 @@ php artisan migrate
 composer require ludovicguenet/whizbang
 ```
 
-### Publish Config
+### Publish Config and Migrations
 
 ```bash
 php artisan vendor:publish --tag=whizbang-config
+php artisan vendor:publish --tag=whizbang-migrations
 ```
 
 ### Run Migrations

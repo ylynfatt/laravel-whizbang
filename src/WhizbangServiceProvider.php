@@ -26,7 +26,9 @@ class WhizbangServiceProvider extends ServiceProvider
             __DIR__.'/../config/whizbang.php' => config_path('whizbang.php'),
         ], 'whizbang-config');
 
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->publishesMigrations([
+            __DIR__.'/../database/migrations' => database_path('migrations'),
+        ], 'whizbang-migrations');
 
         if ($this->app->runningInConsole()) {
             $this->commands([
